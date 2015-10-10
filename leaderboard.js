@@ -2,6 +2,7 @@
 // it is backed by a MongoDB collection named "players".
 
 Players = new Mongo.Collection("players");
+//Players.remove( { })
 
 if (Meteor.isClient) {
   Template.leaderboard.helpers({
@@ -37,8 +38,8 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
   Meteor.startup(function () {
     if (Players.find().count() === 0) {
-      var names = ["Ada Lovelace", "Grace Hopper", "Marie Curie",
-                   "Carl Friedrich Gauss", "Nikola Tesla", "Claude Shannon"];
+
+      var names = ["AIG", "GOOG", "AAPL", "GS"];
       _.each(names, function (name) {
         Players.insert({
           name: name,
